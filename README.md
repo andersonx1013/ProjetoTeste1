@@ -6,17 +6,7 @@ Aqui está um diagrama do modelo C4:
 
 ![Modelo C4](USE_P_TESTAR/C4Model.png)
 
-Explicação em áudio do Modelo C4:
-
-<audio controls>
-  <source src="USE_P_TESTAR/ExplicandoGrafico.mp3" type="audio/aac">
-  Seu navegador não suporta o elemento de áudio.
-</audio>
-
-<audio controls>
-  <source src="USE_P_TESTAR/ExplicandoGrafico.mp3" type="audio/mp3">
-  Seu navegador não suporta o elemento de áudio.
-</audio>
+Explicação em áudio do Modelo C4 (Na Pasta "USE_P_TESTAR")
 
 ## Pré-requisitos
 
