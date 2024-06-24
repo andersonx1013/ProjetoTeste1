@@ -6,6 +6,13 @@ Aqui está um diagrama do modelo C4:
 
 ![Modelo C4](USE_P_TESTAR/C4Model.png)
 
+Explicação em áudio do Modelo C4:
+
+<audio controls>
+  <source src="USE_P_TESTAR/ExplicandoGrafico.mp3" type="audio/mpeg">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+
 ## Pré-requisitos
 
 1. **Docker:** Certifique-se de ter o Docker instalado. Este projeto foi testado utilizando o "Docker for Windows".
