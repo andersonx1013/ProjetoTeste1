@@ -1,0 +1,3 @@
+#Arquivo scheduler/requirements.txt
+kafka-python
+requests

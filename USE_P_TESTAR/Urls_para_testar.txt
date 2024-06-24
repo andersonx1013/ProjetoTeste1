@@ -1,0 +1,102 @@
+Entendendo as URLs
+
+
+Use o Postman ou Arquivo HTML com o CORS (Windows) (Estao ambos na pasta).
+
+OBS: Tudo testei no Windows, mas tudo é prativavel no Linux e mac
+
+=======================================
+GET  http://localhost:5001/api/send
+=======================================
+--> Exemplo de envio: [Envia dados para o Scheduler "Envio Manual"]
+
+{
+    "productId": "688",
+    "productName": "Produto de Test7",
+    "productDescription": "Descrição do Produto de Teste",
+    "price": 19.99,
+    "currency": "BRL",
+    "stockQuantity": 100,
+    "category": "Categoria de Teste"
+}
+
+=======================================
+http://localhost:5001/api/cadastro-produtos
+=======================================
+--> Exemplo de Retorno: Traz todos os produtos cadastrados incluidos desde o inicio do uso.
+
+//Simplemente envie como POST, vazio
+
+{
+    "messages": [
+        {
+            "category": "Categoria de Teste",
+            "currency": "BRL",
+            "price": 19.99,
+            "productDescription": "Descrição do Produto de Teste",
+            "productId": "675",
+            "productName": "Produto de Test7",
+            "stockQuantity": 100
+        },
+        {
+            "category": "Categoria de Teste",
+            "currency": "BRL",
+            "price": 19.99,
+            "productDescription": "Descrição do Produto de Teste",
+            "productId": "677",
+            "productName": "Produto de Test7",
+            "stockQuantity": 100
+        },
+        {
+            "category": "Categoria de Teste",
+            "currency": "BRL",
+            "price": 19.99,
+            "productDescription": "Descrição do Produto de Teste",
+            "productId": "688",
+            "productName": "Produto de Test7",
+            "stockQuantity": 100
+        }
+    ],
+    "status": "success"
+}
+
+
+=======================================
+GET  http://localhost:5001/api/produtos-persistidos
+=======================================
+--> Exemplo de Retorno: Traz todos os produtos persistidos incluidos desde o inicio do uso.
+
+//Simplemente envie como POST, vazio
+
+{
+    "messages": [
+        {
+            "category": "Categoria de Teste",
+            "currency": "BRL",
+            "price": 19.99,
+            "productDescription": "Descrição do Produto de Teste",
+            "productId": "675",
+            "productName": "Produto de Test7",
+            "stockQuantity": 100
+        },
+        {
+            "category": "Categoria de Teste",
+            "currency": "BRL",
+            "price": 19.99,
+            "productDescription": "Descrição do Produto de Teste",
+            "productId": "677",
+            "productName": "Produto de Test7",
+            "stockQuantity": 100
+        },
+        {
+            "category": "Categoria de Teste",
+            "currency": "BRL",
+            "price": 19.99,
+            "productDescription": "Descrição do Produto de Teste",
+            "productId": "688",
+            "productName": "Produto de Test7",
+            "stockQuantity": 100
+        }
+    ],
+    "status": "success"
+}

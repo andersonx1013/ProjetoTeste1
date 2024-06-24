@@ -1,0 +1,3 @@
+#Arquivo db/requirements.txt
+Flask
+psycopg2

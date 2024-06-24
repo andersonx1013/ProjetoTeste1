@@ -1,0 +1,17 @@
+
+1) Coloque o projeto em uma pasta com permissao admin
+2) Tenha o Docker instalado (No meu caso usei o "Docker fo Windows")
+3) O projeto é basicamente um miojo (rs...),
+  3.1) No diretorio raiz, no local onde fica o docker compose use o comando:
+     docker-compose up --build
+  3.2) Aguarde serca de 15 segundo e pronto (Seu mijo está pronto! kkkk), tudo mesmo está em Docker.
+
+4) Para rodar vc pode usar:
+   4.1) O Postman (Tem um Arquivo que basta importar)
+   4.2) Se por um algum motivo voce nao puder usar o postman, basta usar o HTML que forneci
+   4.3) Leia atentamente o arquivo "Urls para testar.txt"
+
+
+Simples, Fácil e Rápido como um Miojo, Mas só que não é tão gostoso. kkkkkk
+
+By Anderson Xavier

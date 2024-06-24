@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "f3342fcb-0918-4ed7-8593-f60a03578c86",
+		"name": "Prova",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1719182",
+		"_collection_link": "https://codeshere.postman.co/workspace/PAGAMENTO-PRODATA~d253ced4-e39f-408b-8e7e-e9f666ab682e/collection/1719182-f3342fcb-0918-4ed7-8593-f60a03578c86?action=share&source=collection_link&creator=1719182"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5001/api/send",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": \"675\",\r\n    \"productName\": \"Produto de Test7\",\r\n    \"productDescription\": \"Descrição do Produto de Teste\",\r\n    \"price\": 19.99,\r\n    \"currency\": \"BRL\",\r\n    \"stockQuantity\": 100,\r\n    \"category\": \"Categoria de Teste\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/send",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/cadastro-produtos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/cadastro-produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"cadastro-produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/produtos-persistidos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/produtos-persistidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"produtos-persistidos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

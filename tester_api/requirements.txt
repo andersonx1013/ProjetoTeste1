@@ -1,0 +1,3 @@
+#Arquivo tester_api/requirements.txt
+Flask
+kafka-python

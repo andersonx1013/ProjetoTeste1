@@ -1,0 +1,7 @@
+Criar um atalho no Windows com (Chrome na pasta padrao)
+
+Destino:
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir="C:\ChromeDevSession"
+
+Iniciar em:
+"C:\Program Files\Google\Chrome\Application"
