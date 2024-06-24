@@ -2,6 +2,10 @@
 
 Bem-vindo! Este guia irá te auxiliar a configurar e rodar um sistema distribuído utilizando Kafka, Python e PostgreSQL. Este projeto é dividido em duas partes principais: Scheduler Python e API Python. Siga os passos abaixo para colocar tudo em funcionamento.
 
+Aqui está um diagrama do modelo C4:
+
+![Modelo C4](USE_P_TESTAR/C4Model.png)
+
 ## Pré-requisitos
 
 1. **Docker:** Certifique-se de ter o Docker instalado. Este projeto foi testado utilizando o "Docker for Windows".
