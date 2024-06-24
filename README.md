@@ -9,7 +9,12 @@ Aqui está um diagrama do modelo C4:
 Explicação em áudio do Modelo C4:
 
 <audio controls>
-  <source src="USE_P_TESTAR/ExplicandoGrafico.mp3" type="audio/mpeg">
+  <source src="USE_P_TESTAR/ExplicandoGrafico.mp3" type="audio/aac">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+
+<audio controls>
+  <source src="USE_P_TESTAR/ExplicandoGrafico.mp3" type="audio/mp3">
   Seu navegador não suporta o elemento de áudio.
 </audio>
 
