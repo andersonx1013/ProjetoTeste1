@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Sender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        textarea, button, input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .status {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .response-container {
+            margin-top: 20px;
+        }
+        #cancelButton {
+            background-color: #dc3545;
+        }
+        #cancelButton:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enviar JSON para o Servidor</h1>
+        <label for="urlInput">Server URL:</label>
+        <input id="urlInput" type="text" value="http://localhost:5001/api/send">
+        <label for="jsonInput">JSON Input:</label>
+        <textarea id="jsonInput" rows="10">
+{
+    "productId": "675",
+    "productName": "Produto de Teste7",
+    "productDescription": "Descrição do Produto de Teste",
+    "price": 19.99,
+    "currency": "BRL",
+    "stockQuantity": 100,
+    "category": "Categoria de Teste"
+}
+        </textarea>
+        <label for="httpMethod">HTTP Method:</label>
+        <select id="httpMethod">
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="GET">GET</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+        <button id="sendButton" onclick="sendJson()">Send</button>
+        <button id="cancelButton" onclick="cancelRequest()" style="display: none;">Cancel</button>
+        <div class="status" id="status">Status: Aguardando envio...</div>
+        <div class="response-container">
+            <h2>Response</h2>
+            <textarea id="responseOutput" rows="10" readonly></textarea>
+        </div>
+    </div>
+
+    <script>
+        let controller = new AbortController();
+
+        function sendJson() {
+            const jsonInput = document.getElementById('jsonInput').value;
+            const urlInput = document.getElementById('urlInput').value;
+            const httpMethod = document.getElementById('httpMethod').value;
+            const responseOutput = document.getElementById('responseOutput');
+            const statusLabel = document.getElementById('status');
+            const sendButton = document.getElementById('sendButton');
+            const cancelButton = document.getElementById('cancelButton');
+
+            controller = new AbortController();
+            const signal = controller.signal;
+
+            statusLabel.textContent = 'Status: Enviando...';
+            sendButton.style.display = 'none';
+            cancelButton.style.display = 'block';
+
+            fetch(urlInput, {
+                method: httpMethod,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: httpMethod === 'GET' || httpMethod === 'DELETE' ? null : jsonInput,
+                signal: signal
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                responseOutput.value = JSON.stringify(data, null, 2);
+                statusLabel.textContent = 'Status: Sucesso';
+            })
+            .catch(error => {
+                if (error.name === 'AbortError') {
+                    responseOutput.value = 'Request canceled.';
+                    statusLabel.textContent = 'Status: Cancelado';
+                } else {
+                    responseOutput.value = 'Error: ' + error.message + '. Verifique se o servidor está acessível e a URL está correta.';
+                    statusLabel.textContent = 'Status: Erro';
+                }
+            })
+            .finally(() => {
+                sendButton.style.display = 'block';
+                cancelButton.style.display = 'none';
+            });
+        }
+
+        function cancelRequest() {
+            controller.abort();
+        }
+    </script>
+</body>
+</html>
